@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html>
-	<head> 
-	<title>Ramazon </title>
-        <style>
-       
-		.button {
-		width: 50px;
-                height: 30px;
-                color: orange;
-                overflow: hidden;
-		}
-		
-	
-  </style>
-        </head>
-	         <body>
-			 <header>-
-		
-		<img class="photo1"  src="ramazon.png" alt="Logo">
-	 	<nav>   
-			
-			<ul>
-				<li> <a href="#HOME">     HOME    </a> </li>			
-				<li> <a href="#CONTACT">  CONTACT </a> </li>
-			        <li> <a href="#ABOUT">    ABOUT   </a> </li>
-				<li> <a href="#JOINUS">   JOINUS  </a> </li>
-			</ul>
-				 
-		</nav>
-		
-			 </header>
-		
-		<main>
-		<h1 Welcome to Ramazone </h1>
-		<table cellspacing="25" >
-			<tr>
-				<th> <img src ="https://bit.ly/3KT4Lr9" width=150 height ="150">
-				<th> <img src="https://bit.ly/3REGHKV" width="150" height="150" > </th>
-				<th> <img src="https://bit.ly/3TNCshO" width="150" height="150"> </th>
-				<td> <img src ="https://bit.ly/3THXsXo" width="150" height="150"> </td>
-
-			<tr>
-				<th> Heroin </th>
-				<th> Ganja </th>
-				<th> Pauaa </th>
-				<th> santra </th>
-                        </tr>
-			<tr>
-				<td> ₹15000 </td>
-				<td> ₹20 </td>
-				<td> ₹15 </td>
-				<td> ₹25 </td>
-			</tr>
-		</table>
-			 </main>
-
-		<form action="/action_page.php">
-			
-                <label for="product">Choose:</label>
-                <select name="product" id="product">
-                <option value="Heroin">Heroin</option>
-                <option value="Ganja">Ganja</option>
-                <option value="Pauua">pauua</option>
-                <option value="Santra">Santra</option>
-                </select>
-		<br><br>
-         
-		</form><br>
-					     
-                <button class="button"><strong>Buy</strong></button>
-		<br><br>
-
-		<textarea name="textarea"
-		rows="5" cols="60" placeholder="comment"></textarea>
-
-         </body>
-
-
+   <head>
+      <title>Ramazon </title>
+      <style>
+         .button {
+         width: 50px;
+         height: 30px;
+         color: orange;
+         overflow: hidden;
+         }
+         html, body {
+         margin:0;
+         padding: 0;
+         }
+         html {
+         font-size: 10px;
+         background-color: #a9a9a9;
+         }
+         main, header, nav, article, aside, footer, section {
+         background-color:white;
+         padding: 1%;
+         }
+         header img {
+         display: block;
+         height: 60px;
+         padding-top: 20.15px;
+         }
+         nav {
+         height: 50px;
+         flex: 100%;
+         display: flex;
+         }
+         nav ul {
+         padding: 0;
+         list-style-type: none;
+         flex: 2;
+         display: flex;
+         }
+         nav li {
+         display: inline ;
+         text-align: center;
+         flex: 1;
+         }
+         nav a, nav span {
+         display: inline-block;
+         font-size: 2rem;
+         height: 3rem;
+         line-height: 1.7;
+         text-transform: uppercase;
+         text-decoration: none;
+         color: black;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         -
+         <img class="photo1"  src="ramazon.png" alt="Logo">
+         <nav>
+            <ul>
+               <li> <a href="#">     HOME    </a> </li>
+               <li> <a href="#">  CONTACT </a> </li>
+               <li> <a href="#">    ABOUT   </a> </li>
+               <li> <a href="#">   JOINUS  </a> </li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <article>
+            <h1 Welcome to Ramazone </h1>
+            <table cellspacing="25" >
+               <tr>
+                  <th> <img src ="https://bit.ly/3KT4Lr9" width=150 height ="150">
+                  <th> <img src="https://bit.ly/3REGHKV" width="150" height="150" > </th>
+                  <th> <img src="https://bit.ly/3TNCshO" width="150" height="150"> </th>
+                  <td> <img src ="https://bit.ly/3THXsXo" width="150" height="150"> </td>
+               <tr>
+                  <th> Heroin </th>
+                  <th> Ganja </th>
+                  <th> Pauaa </th>
+                  <th> santra </th>
+               </tr>
+               <tr>
+                  <td> ₹15000 </td>
+                  <td> ₹20 </td>
+                  <td> ₹15 </td>
+                  <td> ₹25 </td>
+               </tr>
+            </table>
+            <form action="/action_page.php">
+               <label for="product">Choose:</label>
+               <select name="product" id="product">
+                  <option value="Heroin">Heroin</option>
+                  <option value="Ganja">Ganja</option>
+                  <option value="Pauua">pauua</option>
+                  <option value="Santra">Santra</option>
+               </select>
+               <br><br>
+            </form>
+            <br>
+            <button class="button"><strong>Buy</strong></button>
+            <br><br>
+            <textarea name="textarea"
+               rows="5" cols="60" placeholder="comment"></textarea>
+         </article>
+      </main>
+      <footer>
+         <p>
+            This is a fake website for practice purpose - any part of this code is reused in anyway you wish. Original exampal written by n0fake.
+         </p>
+      </footer>
+   </body>
 </html>
