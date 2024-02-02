@@ -1,0 +1,55 @@
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+
+# Create a DataFrame with the provided data
+data = pd.DataFrame({
+    'age': [25, 35, 45, 28, 40, 55, 33, 50, 22, 48],
+    'job': ['service', 'management', 'blue-collar', 'unemployed', 'management', 'blue-collar', 'service', 'management', 'unemployed', 'blue-collar'],
+    'education': ['secondary', 'tertiary', 'primary', 'secondary', 'tertiary', 'secondary', 'tertiary', 'tertiary', 'primary', 'secondary'],
+    'default': ['no', 'no', 'no', 'yes', 'no', 'no', 'no', 'no', 'no', 'no'],
+    'balance': [1000, 3000, -500, 2000, 5000, 1500, 1200, 8000, 600, 300],
+    'housing_loan': ['yes', 'no', 'yes', 'yes', 'no', 'yes', 'no', 'no', 'yes', 'no'],
+    'personal_loan': ['no', 'yes', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'yes', 'no'],
+    'previous_campaigns': [2, 0, 1, 3, 0, 2, 1, 4, 0, 1],
+    'subscribe': [1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
+})
+
+# Separate features (X) and target variable (y)
+X = data.drop('subscribe', axis=1)
+y = data['subscribe']
+
+# Convert categorical variables into numerical using one-hot encoding
+X = pd.get_dummies(X, columns=['job', 'education', 'default', 'housing_loan', 'personal_loan'], drop_first=True)
+
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create and train a logistic regression model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred)
+
+# Visualize confusion matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, cmap='Blues', fmt='g')
+plt.xlabel('Predicted Label')
+plt.ylabel('True Label')
+plt.title('Confusion Matrix')
+plt.show()
+
+# Visualize classification report
+print("Classification Report:")
+print(class_report)
